@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telecom Inventory Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Telecom Inventory Management System</h1>
+    <nav>
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#suppliers">Suppliers</a></li>
+        <li><a href="#notifications">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Dashboard -->
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+      <div id="dashboardMetrics">
+        <div class="metric">
+          <h3>Total Products</h3>
+          <p id="totalProducts">0</p>
+        </div>
+        <div class="metric">
+          <h3>Low Stock Alerts</h3>
+          <p id="lowStockAlerts">0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products">
+      <h2>Manage Products</h2>
+      <form id="productForm">
+        <input type="text" id="productName" placeholder="Product Name" required>
+        <input type="number" id="productStock" placeholder="Stock Level" required>
+        <button type="submit">Add Product</button>
+      </form>
+      <ul id="productList"></ul>
+    </section>
+
+    <!-- Suppliers -->
+    <section id="suppliers">
+      <h2>Manage Suppliers</h2>
+      <form id="supplierForm">
+        <input type="text" id="supplierName" placeholder="Supplier Name" required>
+        <input type="email" id="supplierEmail" placeholder="Email" required>
+        <button type="submit">Add Supplier</button>
+      </form>
+      <ul id="supplierList"></ul>
+    </section>
+
+    <!-- Notifications -->
+    <section id="notifications">
+      <h2>Notifications</h2>
+      <div id="notificationList">
+        <p>No notifications yet.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
