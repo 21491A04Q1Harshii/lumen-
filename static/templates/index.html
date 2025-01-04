@@ -1,77 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Telecom Inventory Management System</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telecom Inventory Management System - Alerts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        .container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .notification {
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+
+        .high-demand {
+            background-color: #ffeeba;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+
+        .low-supply {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .alert-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .alert-controls button {
+            background-color: #007bff;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .alert-controls button:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-  <header>
+
+<header>
     <h1>Telecom Inventory Management System</h1>
-    <nav>
-      <ul>
-        <li><a href="#dashboard">Dashboard</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#suppliers">Suppliers</a></li>
-        <li><a href="#notifications">Notifications</a></li>
-      </ul>
-    </nav>
-  </header>
+</header>
 
-  <main>
-    <!-- Dashboard -->
-    <section id="dashboard">
-      <h2>Dashboard</h2>
-      <div id="metrics">
-        <div class="metric">
-          <h3>Total Products</h3>
-          <p id="totalProducts">0</p>
-        </div>
-        <div class="metric">
-          <h3>Low Stock Alerts</h3>
-          <p id="lowStockAlerts">0</p>
-        </div>
-      </div>
-    </section>
+<div class="container">
+    <h2>Demand and Supply Alerts</h2>
 
-    <!-- Products -->
-    <section id="products">
-      <h2>Manage Products</h2>
-      <form id="productForm">
-        <input type="text" id="productName" placeholder="Product Name" required>
-        <input type="text" id="productCategory" placeholder="Category" required>
-        <input type="number" id="productStock" placeholder="Stock Level" required>
-        <input type="number" id="reorderPoint" placeholder="Reorder Point" required>
-        <button type="submit" id="addProductButton">Add Product</button>
-      </form>
-      <ul id="productList"></ul>
-      <!-- Link to open Add Product page in a new tab -->
-      <a href="add-product.html" target="_blank" id="addProductLink">Open Add Product in New Tab</a>
-    </section>
+    <div class="alert-controls">
+        <button role="button" onclick="triggerHighDemandAlert()">Simulate High Demand Alert</button>
+        <button role="button" onclick="triggerLowSupplyAlert()">Simulate Low Supply Alert</button>
+    </div>
 
-    <!-- Suppliers -->
-    <section id="suppliers">
-      <h2>Manage Suppliers</h2>
-      <form id="supplierForm">
-        <input type="text" id="supplierName" placeholder="Supplier Name" required>
-        <input type="email" id="supplierEmail" placeholder="Email" required>
-        <button type="submit" id="addSupplierButton">Add Supplier</button>
-      </form>
-      <ul id="supplierList"></ul>
-      <!-- Link to open Add Supplier page in a new tab -->
-      <a href="add-supplier.html" target="_blank" id="addSupplierLink">Open Add Supplier in New Tab</a>
-    </section>
+    <div id="high-demand-alert" class="notification high-demand" aria-live="polite">
+        Alert: High demand detected! Stock may not meet the current demand.
+    </div>
 
-    <!-- Notifications -->
-    <section id="notifications">
-      <h2>Notifications</h2>
-      <div id="notificationList">
-        <p>No notifications yet.</p>
-      </div>
-    </section>
-  </main>
+    <div id="low-supply-alert" class="notification low-supply" aria-live="polite">
+        Alert: Low supply warning! Replenish stock immediately.
+    </div>
+</div>
 
-  <script src="script.js"></script>
+<script>
+    function triggerHighDemandAlert(duration = 5000) {
+        const highDemandAlert = document.getElementById('high-demand-alert');
+        highDemandAlert.style.display = 'block';
+
+        setTimeout(() => {
+            highDemandAlert.style.display = 'none';
+        }, duration);
+    }
+
+    function triggerLowSupplyAlert(duration = 5000) {
+        const lowSupplyAlert = document.getElementById('low-supply-alert');
+        lowSupplyAlert.style.display = 'block';
+
+        setTimeout(() => {
+            lowSupplyAlert.style.display = 'none';
+        }, duration);
+    }
+</script>
+
 </body>
 </html>
