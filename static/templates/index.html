@@ -23,7 +23,7 @@
     <!-- Dashboard -->
     <section id="dashboard">
       <h2>Dashboard</h2>
-      <div id="dashboardMetrics">
+      <div id="metrics">
         <div class="metric">
           <h3>Total Products</h3>
           <p id="totalProducts">0</p>
@@ -40,10 +40,14 @@
       <h2>Manage Products</h2>
       <form id="productForm">
         <input type="text" id="productName" placeholder="Product Name" required>
+        <input type="text" id="productCategory" placeholder="Category" required>
         <input type="number" id="productStock" placeholder="Stock Level" required>
-        <button type="submit">Add Product</button>
+        <input type="number" id="reorderPoint" placeholder="Reorder Point" required>
+        <button type="submit" id="addProductButton">Add Product</button>
       </form>
       <ul id="productList"></ul>
+      <!-- Link to open Add Product page in a new tab -->
+      <a href="add-product.html" target="_blank" id="addProductLink">Open Add Product in New Tab</a>
     </section>
 
     <!-- Suppliers -->
@@ -52,9 +56,11 @@
       <form id="supplierForm">
         <input type="text" id="supplierName" placeholder="Supplier Name" required>
         <input type="email" id="supplierEmail" placeholder="Email" required>
-        <button type="submit">Add Supplier</button>
+        <button type="submit" id="addSupplierButton">Add Supplier</button>
       </form>
       <ul id="supplierList"></ul>
+      <!-- Link to open Add Supplier page in a new tab -->
+      <a href="add-supplier.html" target="_blank" id="addSupplierLink">Open Add Supplier in New Tab</a>
     </section>
 
     <!-- Notifications -->
