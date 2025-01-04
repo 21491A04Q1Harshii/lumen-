@@ -1,4 +1,3 @@
-// script.js
 
 // References to elements
 const productForm = document.getElementById('productForm');
